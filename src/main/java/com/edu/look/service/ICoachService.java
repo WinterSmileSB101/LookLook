@@ -22,4 +22,6 @@ public interface ICoachService {
 	public List<Coach> paginationcoach(int pagenumber,int pagesize);//·ÖÒ³
 	
 	public List<Coach> getCoachByCondition(String sex,String region,int ageFrom,int ageTo,int beenDiverFrom,int beenDiverTo);
+	
+	public List<Coach> sortCoach(String sortField,String sortDir);
 }

@@ -71,6 +71,12 @@ public class CoachServiceImpl implements ICoachService {
 		return coachdao.getCoachByCondition(sex, region, ageFrom, ageTo, beenDiverFrom, beenDiverTo);
 	}
 
+	@Override
+	public List<Coach> sortCoach(String sortField, String sortDir) {
+		// TODO Auto-generated method stub
+		return coachdao.sortCoach(sortField, sortDir);
+	}
+
 	
 
 }
