@@ -125,7 +125,7 @@
                    map.enableScrollWheelZoom(true);
                }
                else {
-                   alert('failed' + this.getStatus());
+                  ;
                }
            }, { enableHighAccuracy: true })
            map.addEventListener("click", showInfo);
