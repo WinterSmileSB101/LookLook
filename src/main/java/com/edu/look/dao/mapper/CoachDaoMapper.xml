@@ -29,7 +29,7 @@
  	</select>
  	
  	<select id="fristcoach"  resultType="com.edu.look.pojo.Coach">
- 		select * from coach,driverschool where driverschool.did=coach.did limit 0,2;
+ 		select * from coach,driverschool where driverschool.did=coach.did limit 0,5;
  	</select>
  	
  	<select id="paginationcoach"  resultType="com.edu.look.pojo.Coach">
