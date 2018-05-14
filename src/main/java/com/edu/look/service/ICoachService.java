@@ -19,9 +19,7 @@ public interface ICoachService {
 	
 	public int countcoach();//统计总条数
 	public List<Coach> fristcoach();//首页
-	public List<Coach> paginationcoach(int pagenumber,int pagesize);//分页
+	public List<Coach> paginationcoach(int pagenumber,int pagesize,String sortField,String sortDir);//分页
 	
 	public List<Coach> getCoachByCondition(String sex,String region,int ageFrom,int ageTo,int beenDiverFrom,int beenDiverTo);
-	
-	public List<Coach> sortCoach(String sortField,String sortDir);
 }

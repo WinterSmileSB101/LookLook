@@ -19,9 +19,8 @@ public interface ICoachDao {
 	
 	public int countcoach();//统计总条数
 	public List<Coach> fristcoach();//首页
-	public List<Coach> paginationcoach(@Param("pagenumber")int pagenumber,@Param("pagesize")int pagesize);//分页
+	public List<Coach> paginationcoach(@Param("pagenumber")int pagenumber,@Param("pagesize")int pagesize,@Param("sortField")String sortField,@Param("sortDir")String sortDir);//分页
 	
 	public List<Coach> getCoachByCondition(@Param("sex")String sex,@Param("region")String region,@Param("ageFrom")int ageFrom,@Param("ageTo") int ageTo,@Param("beenDiverFrom")int beenDiverFrom,@Param("beenDiverTo")int beenDiverTo);
 	
-	public List<Coach> sortCoach(@Param("sortField")String sortField,@Param("sortDir")String sortDir);
 }
