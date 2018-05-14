@@ -70,7 +70,7 @@ public class StudentController {
 			if(studentservice.studentregister(sname, spassword, email, sex)){
 				System.out.println("注册成功");
 				MailUtil.sendEmail(email, "学员"+sname+"注册成功，您的密码是"+spassword+",现在可以登陆学习了！！！", "注册成功");
-				return "forward:/login.jsp";
+				return "forward:/look/login/login.htm";
 				
 			}else{
 				req.setAttribute("message", "0");

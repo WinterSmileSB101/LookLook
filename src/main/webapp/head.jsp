@@ -151,7 +151,7 @@
                             <c1:if test="${not empty stu}">
                             <li><a href="/look/student/getoneperson.htm?sid=${stu.sid}">个人中心</a></li>
                             </c1:if>
-                            <li><a href="/look/exam/getexamquestion.htm?iid=1">在线答题</a></li>
+                            
                         </ul>
                     </div>
 
