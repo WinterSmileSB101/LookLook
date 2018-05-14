@@ -47,18 +47,18 @@
 				<div style="width: 50px">
 					<span>评分</span>
 					<div style="position: relative; top: -27px; left: 10px">
-						<img src="../images/up.png" class="socal"
+						<img src="../images/up.png" onclick="sort('cscore','asc')" class="socal"
 							style="position: absolute; left：10px; width: 30px" /> <img
-							src="../images/down.png" class="socal"
+							src="../images/down.png" onclick="sort('cscore','desc')" class="socal"
 							style="position: absolute; left：10px; width: 30px" />
 					</div>
 				</div>
 				<div style="width: 100px;">
 					<span>教龄</span>
 					<div style="position: relative; top: -27px; left: 10px">
-						<img src="../images/up.png" class="age"
+						<img src="../images/up.png" onclick="sort('c2','asc')" class="age"
 							style="position: absolute; left：10px; width: 30px" /> <img
-							src="../images/down.png" class="age"
+							src="../images/down.png" onclick="sort('c2','desc')" class="age"
 							style="position: absolute; left：10px; width: 30px" />
 					</div>
 				</div>
@@ -172,6 +172,20 @@
 </script>
 
 <script type="text/javascript">
+	// 排序
+	//sortCoach.htm
+	function sort(sortField,sortDir){
+		$.post('/look/coach/sortCoach.htm',{
+			sortField:sortField,
+			sortDir:sortDir
+		},function(data) {
+			alert(data)
+			
+		}, 'json');
+	}
+</script>
+
+<script type="text/javascript">
 	var pagenumber = 1;
 	var pagesize = 5;
 	var total = 0;
@@ -212,9 +226,7 @@
 			return;
 		}
 
-		$
-				.post(
-						'/look/coach/paginationcoach.htm',
+		$.post('/look/coach/paginationcoach.htm',
 						{
 							pagenumber : (++pagenumber - 1) * pagesize,
 							pagesize : pagesize
@@ -404,5 +416,6 @@
 	}
 
 	document.getElementById("pagenumber").innerHTML = pagenumber;
+	
 </script>
 </html>

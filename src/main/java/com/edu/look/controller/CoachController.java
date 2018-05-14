@@ -94,4 +94,11 @@ public class CoachController {
 		return coachservice.paginationcoach(pagenumber, pagesize);
 	}
 	
+	@ResponseBody
+	@RequestMapping(value="sortCoach.htm",method=RequestMethod.POST)
+	public List<Coach> sortCoach(String sortField,String sortDir){
+		
+		return coachservice.sortCoach(sortField, sortDir);
+	}
+	
 }
