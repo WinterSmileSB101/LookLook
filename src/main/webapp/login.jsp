@@ -34,7 +34,7 @@
 						<!-- <div class="valiPic"><input type="text" name="valiPic" value="${validatePic.getPic()}"></div> -->
 						<div class="name"><img id="validateCode" alt="验证码" src="${validatePic.getPic()}" onclick="refreshValidateCode()"></div>
 						<div class="tijiao"><button onclick="validateImage()">确认登录</button></div>
-						<div class="reg"><a href="register.jsp">免费注册</a></div>
+						<div class="reg"><a href="/look/register.jsp">免费注册</a></div>
 					</div>
 				</div>
         	</div>
