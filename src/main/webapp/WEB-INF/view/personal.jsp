@@ -43,7 +43,7 @@
 										<span class="age">${student.sage}岁</span>
 									</dt>
 									<dd class="jkpt-te-name">
-										<b>电子邮箱${student.semail}</b>
+										<b>电子邮箱: ${student.semail}</b>
 										
 									</dd>
 									<dd class="jkpt-te-icon">
