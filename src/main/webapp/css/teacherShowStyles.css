@@ -166,3 +166,47 @@ a {
     padding-left: 2px;
     font-size: 14px;
 }
+
+.downArrow{
+	width: 0;
+    position: absolute;
+    left: 33px;
+    top: 20px;
+    height: 0;
+    border-width: 8px;
+    border-style: solid;
+    border-color: #bfb9b9 transparent transparent transparent;
+}
+
+.downArrow:hover{
+	width: 0;
+    position: absolute;
+    left: 33px;
+    top: 20px;
+    height: 0;
+    border-width: 8px;
+    border-style: solid;
+    border-color: #504949 transparent transparent transparent;
+}
+
+.upArrow{
+	width: 0;
+    position: absolute;
+    left: 33px;
+    top: -2px;
+    height: 0;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent #bfb9b9 transparent;
+}
+
+.upArrow:hover{
+	width: 0;
+    position: absolute;
+    left: 33px;
+    top: -2px;
+    height: 0;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent #504949 transparent;
+}

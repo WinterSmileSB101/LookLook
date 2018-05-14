@@ -47,19 +47,27 @@
 				<div style="width: 50px">
 					<span>评分</span>
 					<div style="position: relative; top: -27px; left: 10px">
+						<div class="upArrow" onclick='sort("cscore","asc")'></div>
+						<div class="downArrow" onclick='sort("cscore","desc")'></div>
+					<!-- 
 						<img src="../images/up.png" onclick='sort("cscore","asc")' class="socal"
 							style="position: absolute; left：10px; width: 30px" /> <img
 							src="../images/down.png" onclick='sort("cscore","desc")' class="socal"
 							style="position: absolute; left：10px; width: 30px" />
+							 -->
 					</div>
 				</div>
 				<div style="width: 100px;">
 					<span>教龄</span>
-					<div style="position: relative; top: -27px; left: 10px">
+					<div style="position: relative; top: -27px; left: 36px">
+						<div class="upArrow" onclick='sort("c2","asc")'></div>
+						<div class="downArrow" onclick='sort("c2","desc")'></div>
+					<!-- 
 						<img src="../images/up.png" onclick='sort("c2","asc")' class="age"
 							style="position: absolute; left：10px; width: 30px" /> <img
 							src="../images/down.png" onclick='sort("c2","desc")' class="age"
 							style="position: absolute; left：10px; width: 30px" />
+							 -->
 					</div>
 				</div>
 

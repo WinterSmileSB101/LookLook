@@ -64,9 +64,9 @@
 
 <label for="exampleInputName2">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱:&nbsp;</label> 
 <input type="text" class="form-control" name="semail" value="${student.semail }"><br>
-<!-- 
-<div class="main-div">  
 
+<div class="main-div">  
+<!-- 
 <label for="exampleInputName2">经&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;度:&nbsp;</label> 
 <input type="text" class="form-control" ID="lng" name="slon" value="${student.slon}"><br>
 
@@ -77,9 +77,10 @@
 <input type="text" class="form-control" ID="sever_add" name="s1" value="${student.s1 }">
 <input type='button' value='点击显示地图获取地址经纬度' class="btn btn-default" id='open' align="right" size="100">  
 <div id='allmap' style='width: 100%; height: 30%; position: absolute; display: none'></div></div>
+ -->
 <input type="submit" class="btn btn-default" value="修改">
 </div>
- -->
+
 
 </form>
 </c:forEach>

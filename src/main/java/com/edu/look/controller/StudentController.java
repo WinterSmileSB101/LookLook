@@ -33,7 +33,7 @@ public class StudentController {
 	IValidateCodeService validateCodeService;
 	
 	//student login
-	@RequestMapping(value="/studentlogin.htm",method=RequestMethod.POST)
+	@RequestMapping(value="/studentlogin.htm")
 	public String studentlogin(String username,String password,HttpSession session){
 		Student stu;
 		System.out.println("ÓÃ»§µÇÂ¼");
