@@ -47,18 +47,18 @@
 				<div style="width: 50px">
 					<span>评分</span>
 					<div style="position: relative; top: -27px; left: 10px">
-						<img src="../images/up.png" class="socal"
+						<img src="../images/up.png" onclick='sort("cscore","asc")' class="socal"
 							style="position: absolute; left：10px; width: 30px" /> <img
-							src="../images/down.png" class="socal"
+							src="../images/down.png" onclick='sort("cscore","desc")' class="socal"
 							style="position: absolute; left：10px; width: 30px" />
 					</div>
 				</div>
 				<div style="width: 100px;">
 					<span>教龄</span>
 					<div style="position: relative; top: -27px; left: 10px">
-						<img src="../images/up.png" class="age"
+						<img src="../images/up.png" onclick='sort("c2","asc")' class="age"
 							style="position: absolute; left：10px; width: 30px" /> <img
-							src="../images/down.png" class="age"
+							src="../images/down.png" onclick='sort("c2","desc")' class="age"
 							style="position: absolute; left：10px; width: 30px" />
 					</div>
 				</div>
@@ -175,6 +175,16 @@
 	var pagenumber = 1;
 	var pagesize = 5;
 	var total = 0;
+	var sortField="cscore";
+	var sortDir="desc";
+	
+	// 排序
+	//sortCoach.htm
+	function sort(sortField,sortDir){
+		window.sortField = sortField;
+		window.sortDir = sortDir;
+		currentpage();
+	}
 
 	//查询总条数
 
@@ -212,12 +222,63 @@
 			return;
 		}
 
-		$
-				.post(
-						'/look/coach/paginationcoach.htm',
+		$.post('/look/coach/paginationcoach.htm',
 						{
 							pagenumber : (++pagenumber - 1) * pagesize,
-							pagesize : pagesize
+							pagesize : pagesize,
+							sortField: window.sortField,
+							sortDir: window.sortDir
+						},
+						function(data) {
+							$('#ul-list li').remove();
+							for (var i = 0; i < data.length; i++) {
+								$('#ul-list')
+										.append(
+												'<li><div class="jkpt-list-left"><a target="_blank" href="/look/coach/getnamecoach.htm?cid='
+														+ data[i].cid
+														+ '"><img src="'+data[i].cphoto+'" title="'+data[i].cname+'"></a></div><div class="jkpt-list-center"><div class="title"><a href="/look/coach/getnamecoach.htm?cid='
+														+ data[i].cid
+														+ '">'
+														+ data[i].cname
+														+ ' </a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="age">教龄'
+														+ data[i].c2
+														+ '年</span></div><div class="address"><span><a target="_blank" href="/look/driverschool/getonedriverschool.htm?did='
+														+ data[i].did
+														+ '">'
+														+ data[i].dname
+														+ '</a></span></div><div class="jtaddress"><span>地址：'
+														+ data[i].caddress
+														+ ' </span></div><div class="score"><span>驾校评分：'
+														+ data[i].cscore
+														+ '</span></div></div><div style="float:right;margin-top: 14px;"><p><font style="font-size:28px;font-family: sans-serif;color: red"><strong ><i >￥</i>'
+														+ data[i].c1
+														+ '</strong></font><span><font size="2px">起</font></span></p></div><br><br><div style="height:0; clear:both;" ></div></li>');
+
+							}
+						}, 'json')
+		document.getElementById("pagenumber").innerHTML = pagenumber;
+		document.getElementById("total").innerHTML = maxpage;
+	}
+	
+	//当前页
+	function currentpage(sortField,sortDir) {
+		var maxpage = 0;
+		var pagenumber = document.getElementById("pagenumber").innerHTML;
+		alert(pagenumber);
+		//计算最大页数
+		if (total % pagesize == 0) {
+			maxpage = total / pagesize;
+		} else {
+			maxpage = parseInt(total / pagesize + 1);
+		}
+		
+		
+		$.post('/look/coach/paginationcoach.htm',
+						{
+							pagenumber : (pagenumber-1) * pagesize,
+							pagesize : pagesize,
+							sortField: window.sortField,
+							sortDir: window.sortDir
 						},
 						function(data) {
 							$('#ul-list li').remove();
@@ -271,7 +332,9 @@
 						'/look/coach/paginationcoach.htm',
 						{
 							pagenumber : (--pagenumber - 1) * pagesize,
-							pagesize : pagesize
+							pagesize : pagesize,
+							sortField: window.sortField,
+							sortDir: window.sortDir
 						},
 						function(data) {
 							$('#ul-list li').remove();
@@ -321,7 +384,9 @@
 						'/look/coach/paginationcoach.htm',
 						{
 							pagenumber : 0,
-							pagesize : pagesize
+							pagesize : pagesize,
+							sortField: window.sortField,
+							sortDir: window.sortDir
 						},
 						function(data) {
 							$('#ul-list li').remove();
@@ -404,5 +469,6 @@
 	}
 
 	document.getElementById("pagenumber").innerHTML = pagenumber;
+	
 </script>
 </html>

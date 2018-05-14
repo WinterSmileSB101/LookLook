@@ -89,9 +89,9 @@ public class CoachController {
 	
 	@ResponseBody
 	@RequestMapping(value="paginationcoach.htm",method=RequestMethod.POST)
-	public List<Coach> paginationcoach(int pagenumber,int pagesize){
+	public List<Coach> paginationcoach(int pagenumber,int pagesize,String sortField,String sortDir){
 		
-		return coachservice.paginationcoach(pagenumber, pagesize);
+		return coachservice.paginationcoach(pagenumber, pagesize,sortField,sortDir);
 	}
 	
 }

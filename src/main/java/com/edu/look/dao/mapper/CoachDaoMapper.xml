@@ -33,7 +33,7 @@
  	</select>
  	
  	<select id="paginationcoach"  resultType="com.edu.look.pojo.Coach">
- 		select * from coach,driverschool where driverschool.did=coach.did limit #{pagenumber},#{pagesize};
+ 		select * from coach,driverschool where driverschool.did=coach.did ORDER BY ${sortField} ${sortDir} limit ${pagenumber},${pagesize};
  	</select>
  	
  	<select id="getCoachByCondition"  resultType="com.edu.look.pojo.Coach">
@@ -59,11 +59,5 @@
                 AND beenDiver<![CDATA[ <= ]]> #{beenDiverTo}
             </if>
         </where>
-	</select>
-
-	<select id="sortCoach"  resultType="com.edu.look.pojo.Coach">
-		select * from coach,driverschool
-
-        orderby #{sortField} #{sortDir}
 	</select>
  </mapper>

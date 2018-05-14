@@ -59,9 +59,9 @@ public class CoachServiceImpl implements ICoachService {
 	}
 
 	@Override
-	public List<Coach> paginationcoach(int pagenumber, int pagesize) {
+	public List<Coach> paginationcoach(int pagenumber, int pagesize,String sortField,String sortDir) {
 		// TODO Auto-generated method stub
-		return coachdao.paginationcoach(pagenumber, pagesize);
+		return coachdao.paginationcoach(pagenumber, pagesize,sortField,sortDir);
 	}
 
 	@Override
@@ -70,13 +70,5 @@ public class CoachServiceImpl implements ICoachService {
 		// TODO Auto-generated method stub
 		return coachdao.getCoachByCondition(sex, region, ageFrom, ageTo, beenDiverFrom, beenDiverTo);
 	}
-
-	@Override
-	public List<Coach> sortCoach(String sortField, String sortDir) {
-		// TODO Auto-generated method stub
-		return coachdao.sortCoach(sortField, sortDir);
-	}
-
-	
 
 }
