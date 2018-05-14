@@ -109,8 +109,9 @@
 					</div> <br>
 				<br>
 					<div style="height: 0; clear: both;"></div>
+				<!--
 				<li>
-					<!-- <input type="hidden" id="lng2" value="${coach.clon}">
+					 <input type="hidden" id="lng2" value="${coach.clon}">
          	<input type="hidden" id="lat2" value="${coach.clat}"> -->
 			</c:forEach>
 
